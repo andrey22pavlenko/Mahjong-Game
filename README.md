@@ -1,3 +1,13 @@
+# Mahjong-Game 
+
+
+![Снимок экрана от 2022-10-12 01-54-15](https://user-images.githubusercontent.com/114909146/195213104-8bea438e-0147-4893-8070-87a3cc2e30a6.png)
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
