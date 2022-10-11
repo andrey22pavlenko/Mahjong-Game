@@ -9,7 +9,6 @@ interface CardItemProps {
   open: (item: CardUI,id:number) => void
  
 }
-
 const  CardItem:FC<CardItemProps> = ({card, open}) => {
  
 const dispatch = useAppDispatch()
