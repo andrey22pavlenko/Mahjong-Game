@@ -19,7 +19,7 @@ const CardItem: FC<CardItemProps> = ({ card, open }) => {
 
   const openItem = () => {
     open(card, card.id)
-    card.open = card.open !== true
+    card.open = !card.open
   }
 
   return (
