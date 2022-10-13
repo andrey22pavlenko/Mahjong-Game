@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from 'react'
 import { useAppDispatch } from '../store/hooks'
-import { openCards } from '../reducer/reducerCard'
-import { CardUI } from '../type/type'
+import { openCards } from '../reducers/cardReducer'
+import { CardType } from '../types/CardType'
 
 interface CardItemProps {
-  card: CardUI
-  open: (item: CardUI, id: number) => void
+  card: CardType
+  open: (item: CardType, id: number) => void
 }
 const CardItem: FC<CardItemProps> = ({ card, open }) => {
   const dispatch = useAppDispatch()

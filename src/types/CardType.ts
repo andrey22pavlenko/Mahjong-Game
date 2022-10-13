@@ -1,4 +1,4 @@
-export interface CardUI {
+export interface CardType {
   title: number
   id: number
   open: boolean

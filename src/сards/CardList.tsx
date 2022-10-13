@@ -1,19 +1,20 @@
 import React, { FC } from 'react'
 import { useAppDispatch } from '../store/hooks'
-import { openCardOne, openCardTwo } from '../reducer/reducerCard'
+import { openCardOne, openCardTwo } from '../reducers/cardReducer'
 import CardItem from './CardItem'
-import { CardUI } from '../type/type'
+import { CardType } from '../types/CardType'
+
 interface CardListProps {
-  CardOne: CardUI[]
-  CardTwo: CardUI[]
+  CardOne: CardType[]
+  CardTwo: CardType[]
 }
 
 const CardList: FC<CardListProps> = ({ CardOne, CardTwo }) => {
   const dispatch = useAppDispatch()
-  const openOneUser = (item: CardUI, id: number) => {
+  const openOneUser = (item: CardType, id: number) => {
     dispatch(openCardOne({ card: item, id: id }))
   }
-  const openTwoUser = (item: CardUI, id: number) => {
+  const openTwoUser = (item: CardType, id: number) => {
     dispatch(openCardTwo({ card: item, id: id }))
   }
   return (

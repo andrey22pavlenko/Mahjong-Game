@@ -1,23 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { CardUI } from '../type/type'
+import { CardType } from '../types/CardType'
 
-const numberCards = 16
+const NUM = 16
 
-interface CardType {
-  cardOne: CardUI[]
-  cardTwo: CardUI[]
+interface Card {
+  cardOne: CardType[]
+  cardTwo: CardType[]
   OpenCardOne: number
   OpenCardTwo: number
 }
 
-const initialState: CardType = {
+const initialState: Card = {
   cardOne: [],
   cardTwo: [],
   OpenCardOne: 0,
   OpenCardTwo: 0,
 }
 
-export const reducerCard = createSlice({
+export const cardReducer = createSlice({
   name: 'reducerApp',
   initialState,
 
@@ -26,22 +26,21 @@ export const reducerCard = createSlice({
       state.cardOne.splice(0, state.cardOne.length)
       state.cardTwo.splice(0, state.cardTwo.length)
 
-      for (let i = 0; i < numberCards; i++) {
+      for (let i = 0; i < NUM; i++) {
         const titleCard = Math.round(Math.random() * 100)
         const optionCard = { title: titleCard, id: i, open: false }
         state.cardOne.push(optionCard)
         state.cardTwo.push(optionCard)
       }
     },
-    openCardOne: (state, action: PayloadAction<{ card: CardUI; id: number }>) => {
 
+    openCardOne: (state, action: PayloadAction<{ card: CardType; id: number }>) => {
       const card = { ...action.payload.card }
       card.open = !card.open
       state.cardOne[action.payload.id] = card
       card.open ? (state.OpenCardOne = action.payload.id) : (state.OpenCardOne = 0)
     },
-    openCardTwo: (state, action: PayloadAction<{ card: CardUI; id: number }>) => {
-        
+    openCardTwo: (state, action: PayloadAction<{ card: CardType; id: number }>) => {
       const card = { ...action.payload.card }
       card.open = !card.open
       state.cardTwo[action.payload.id] = card
@@ -60,4 +59,4 @@ export const reducerCard = createSlice({
   },
 })
 
-export const { startGame, openCardOne, openCardTwo, openCards } = reducerCard.actions
+export const { startGame, openCardOne, openCardTwo, openCards } = cardReducer.actions
