@@ -29,7 +29,7 @@ const CardItem: FC<CardItemProps> = ({ card, open }) => {
         className='w-24 h-32 border-2 rounded-lg 
    transition ease-in-out delay-150  hover:-translate-y-1  hover:scale-110  hover:border-red-300  hover:shadow-xl  hover:  duration-300'
       >
-        {card.open ? <p className='text-xl'>{card.title}</p> : <></>}
+        {card.open ? <p className='text-xl'>{card.title}</p> : null}
       </button>
     </div>
   )
