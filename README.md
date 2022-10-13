@@ -1,12 +1,6 @@
 # Mahjong-Game 
 
-
-![Снимок экрана от 2022-10-12 01-54-15](https://user-images.githubusercontent.com/114909146/195213104-8bea438e-0147-4893-8070-87a3cc2e30a6.png)
-
-
-
-
-
+![Снимок экрана от 2022-10-13 22-03-26](https://user-images.githubusercontent.com/114909146/195686303-684ac175-7d6b-42b9-9984-cb732b39df11.png)
 
 # Getting Started with Create React App
 
