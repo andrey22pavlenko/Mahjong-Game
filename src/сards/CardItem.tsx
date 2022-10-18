@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from 'react'
 import { useAppDispatch } from '../store/hooks'
 import { openCards } from '../reducers/cardReducer'
-import { CardType } from '../types/CardType'
+import { cardItemType } from '../types/cardItemType'
 
 interface CardItemProps {
-  card: CardType
-  open: (item: CardType, id: number) => void
+  card: cardItemType
+  open: (item: cardItemType, id: number) => void
 }
 const CardItem: FC<CardItemProps> = ({ card, open }) => {
   const dispatch = useAppDispatch()
@@ -13,7 +13,7 @@ const CardItem: FC<CardItemProps> = ({ card, open }) => {
   useEffect(() => {
     const time = setTimeout(() => {
       dispatch(openCards())
-    }, 1000)
+    }, 1500)
     return () => clearTimeout(time)
   })
 

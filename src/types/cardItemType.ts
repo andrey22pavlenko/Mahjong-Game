@@ -1,4 +1,4 @@
-export interface CardType {
+export interface cardItemType {
   title: number
   id: number
   open: boolean

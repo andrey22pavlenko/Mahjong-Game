@@ -2,25 +2,25 @@ import React, { FC } from 'react'
 import { useAppDispatch } from '../store/hooks'
 import { openCardOne, openCardTwo } from '../reducers/cardReducer'
 import CardItem from './CardItem'
-import { CardType } from '../types/CardType'
+import { cardItemType } from '../types/cardItemType'
 
 interface CardListProps {
-  CardOne: CardType[]
-  CardTwo: CardType[]
+  cardOne: cardItemType[]
+  cardTwo: cardItemType[]
 }
 
-const CardList: FC<CardListProps> = ({ CardOne, CardTwo }) => {
+const CardList: FC<CardListProps> = ({ cardOne, cardTwo }) => {
   const dispatch = useAppDispatch()
-  const openOneUser = (item: CardType, id: number) => {
+  const openOneUser = (item: cardItemType, id: number) => {
     dispatch(openCardOne({ card: item, id: id }))
   }
-  const openTwoUser = (item: CardType, id: number) => {
+  const openTwoUser = (item: cardItemType, id: number) => {
     dispatch(openCardTwo({ card: item, id: id }))
   }
   return (
     <div className='flex space-x-4 mt-6 w-9/12 '>
       <div className='grid grid-cols-4 gap-4'>
-        {CardOne.map((item) => (
+        {cardOne.map((item) => (
           <div key={item.id} className=' space-x-4  space-y-4'>
             <CardItem card={item} open={openOneUser} />
           </div>
@@ -28,7 +28,7 @@ const CardList: FC<CardListProps> = ({ CardOne, CardTwo }) => {
       </div>
 
       <div className=' grid grid-cols-4 gap-4 '>
-        {CardTwo.map((item) => (
+        {cardTwo.map((item) => (
           <div key={item.id} className='space-x-4  space-y-4'>
             <CardItem card={item} open={openTwoUser} />
           </div>
