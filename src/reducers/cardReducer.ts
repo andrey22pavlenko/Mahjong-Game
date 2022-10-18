@@ -3,6 +3,22 @@ import { cardItemType } from '../types/cardItemType'
 
 const NUM = 16
 
+const nextPrime = (value: number) => {
+  if (value > 2) {
+    let i, q
+    do {
+      i = 3
+      value += 2
+      q = Math.floor(Math.sqrt(value))
+      while (i <= q && value % i) {
+        i += 2
+      }
+    } while (i <= q)
+    return value
+  }
+  return value === 2 ? 3 : 2
+}
+
 interface stateType {
   cardOne: cardItemType[]
   cardTwo: cardItemType[]
@@ -23,22 +39,6 @@ export const cardReducer = createSlice({
 
   reducers: {
     startGame: (state) => {
-      const nextPrime = (value: number) => {
-        if (value > 2) {
-          let i, q
-          do {
-            i = 3
-            value += 2
-            q = Math.floor(Math.sqrt(value))
-            while (i <= q && value % i) {
-              i += 2
-            }
-          } while (i <= q)
-          return value
-        }
-        return value === 2 ? 3 : 2
-      }
-
       let value = 0
       for (let i = 0; i < NUM; i++) {
         value = nextPrime(value)
